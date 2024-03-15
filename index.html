@@ -1,333 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Title</title>
-<style>
-    body {
-        margin: 0px;
-        font-family: Arial, sans-serif;
-    }
-    .navbar {
-        width: 100%;
-        height: 10vh;
-        background-color: lightgray;
-        position: sticky;
-        top: 0;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
-        display: flex;
-        align-items: center;
-    }
-    .logo {
-        width: 40%;
-        text-align: center;
-        border-right: 2px solid black;
-    }
-    .menu {
-        width: 60%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 10vh;
-        border: 0px solid black;
-        /* border-left: 2px solid black; */
-    }
-    .menu a {
-        text-decoration: none;
-        color: black;
-        /* height: 100%; */
-    }
-    .menu a:hover {
-        background-color: lightblue;
-    }
-    .menu button {
-        width: auto;
-        height: 10vh;
-        background-color: lightgray;
-        border: 0px solid black !important;
-    }
-    .main {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 80%;
-        width: 100%;
-    }
-    .main div {
-        width: 100%;
-        height: 20%; 
-        /* Contoh tinggi setiap div di dalam main */
-        /* background-color: lightblue; */
-        /* border: 0.5px solid black; */
-    }
-    .programs{
-        background-color: rgb(248, 183, 183);
-        display: flex;
-        flex-direction: column;
-    }
-    .programs h2 {
-        border: 0px solid black;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Title</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
 
-    }
-    .programs1 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
-        grid-gap: 10px;
-        /* padding: 10px; */
-        border: 0px solid black !important;
+        .menu button{
+            width: 100px !important;
 
-    }
-    .card {
-        background-color: rgb(250, 155, 126);
-        border: 2px solid black;
-        text-align: center;
-        height: 50px !important;
-        width: 70% !important;
-        padding-top: 25%;
-        padding-bottom: 25%;
-        margin: 10%;
-        /* padding: 20px; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        }
 
+        .menu button:hover{
+            cursor: pointer;
+        }
 
-    .footer {
-        width: 100%;
-        height: 10%;
-        background-color: lightgray;
-        border: 2px solid black;
-    }
-    .contact {
-        padding: 20px;
-    }
-    .Informasi {
-        background-color: rgb(158, 224, 254);
-        width: 100%;
-        border: 0px solid black !important;
-        /* border: 2px solid black; */
-        /* padding: 10px; */
-    }
-    .Informasi table {
-        width: 100%;
-        /* border-collapse: collapse; */
-    }
-    .Informasi td, .Informasi th {
-        /* border: 1px solid black; */
-        /* padding: 8px; */
-        background-color: rgb(124, 186, 244);
-        text-align: center;
-    }
-    .profil{
-        background-color: rgb(210, 162, 255);
-        border: 0px solid rgba(255, 255, 255, 0) !important;
-        /* width: 100%;
-        border: 0px solid black !important; */
-    }
-    .profiltitle{
-        border: 0px solid rgba(255, 255, 255, 0) !important;
-
-    }
-    .desc{
-        padding: 2%;
-        border: 0px solid rgba(255, 255, 255, 0) !important;
-
-    }
-
-    .berita{
-        background-color: rgb(147, 250, 215);
-    }
-
-    .berita1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .card2 {
-        background-color: rgb(143, 250, 198);
-        border: 2px solid black;
-        text-align: center;
-        height: 200px !important;
-        width: 170px !important;
-        /* padding-top: 25%; */
-        /* padding-bottom: 25%; */
-        margin: 3%;
-        /* padding: 20px; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .card2top {
-        height: 100px !important; 
-    }
-    .card2mid {
-        height: 10%; 
-        text-align: center;
-    }
-    .card2bottom {
-        height: 40%; 
-        margin-top: 5% ;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-</style>
+    </style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <div class="logo">KURSUSIT.ID</div>
-    <div class="menu">
-        <a href="#"><button>Programs</button></a>
-        <a href="#"><button>Informasi</button></a>
-        <a href="#"><button>Profile</button></a>
-        <a href="#"><button>News</button></a>
-        <a href="#"><button>Gallery</button></a>
-        <a href="#"><button>Contact</button></a>
-    </div>
+    <div class="navbar">
+  <div class="logo" style="font-family:'Segoe UI'; font-weight: bolder; font-size: x-large;
+  color: rgb(77, 77, 135) !important;
+   ">KURSUSIT.ID</div>
+<div class="menu">
+    <button onclick="scrollToSection('programs')">Programs</button>
+    <button onclick="scrollToSection('informasi')">Informasi</button>
+    <button onclick="scrollToSection('profile')">Profile</button>
+    <button onclick="scrollToSection('news')">News</button>
+    <button onclick="scrollToSection('gallery')">Gallery</button>
+    <button onclick="scrollToSection('contact')">Contact</button>
 </div>
+    </div>
 
-<div class="main">
-    <div class="programs">
-        <H2 style="margin-left: 1%;">Pelatihan yang disediakan</H2>
-    <div class="programs1">
-        <div class="card">Cyber Security</div>
-        <div class="card">Web development</div>
-        <div class="card">Software Quality</div>
-        <div class="card">Enterprise Architecture with TOGAF</div>
-        <div class="card">IT Audit with COBIT 2019</div>
-        <div class="card">IT Management with ITIL</div>
-    </div>
-    </div>
-    <div class="Informasi">
-        <div></div>
-        <div style="width: 100%;">
-            <h2 style="margin-left: 1%;">Informasi pelatihan</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nama Pelatihan</th>
-                        <th>Batch</th>
-                        <th>Pelaksanaan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cyber Security</td>
-                        <td>Batch 4</td>
-                        <td>Dimulai 10 Maret 2024</td>
-                    </tr>
-                    <tr>
-                        <td>Software Quality Assurance</td>
-                        <td>Batch 4</td>
-                        <td>Dimulai 10 Maret 2024</td>
-                    </tr>
-                    <tr>
-                        <td>Web development</td>
-                        <td>Batch 4</td>
-                        <td>Dimulai 10 Maret 2024</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="profil" style="display: flex; flex-direction: column;">
-        <div><H2 style="margin-left: 1%;">profil lembaga</H2></div>
-        <div style="display: flex; flex-direction: row;">
-            <div class="profiltitle" style="align-items: center; text-align: center;">
-                <H2>Apa itu</H2>
-                <H1>KURSUSIT.id??</H1>
-            </div>
-            <div class="desc">
-                <p>KURSUSIT.id adalah platform marketplace edukasi IT dan pengembangan diri berbasis online yang dapat diakses kapan saja dan di mana saja untuk mendampingi generasi muda Indonesia #sampaijadibisa
-                </p>
+    <div class="main">
+        <div class="programs" id="programs">
+            <H2 style="margin-left: 1%;">Pelatihan yang disediakan</H2>
+            <div class="programs1">
+                <div class="card">
+                    <h2>Cyber Security</h2>
                 </div>
+                <div class="card">
+                    <h2>Fullstack Web development</h2>
+                </div>
+                <div class="card">
+                    <h2>Data Centre Facilities Management</h2>
+                </div>
+                <div class="card">
+                    <h2>Enterprise Architecture with TOGAF</h2>
+                </div>
+                <div class="card">
+                    <h2>IT Risk and Audit with COBIT 2019</h2>
+                </div>
+                <div class="card">
+                    <h2>IT Management with ITIL v4</h2>
+                </div>
+            </div>
+        </div>
+        <div class="Informasi" id="informasi">
+            <div></div>
+            <div style="width: 100%;">
+                <h2 style="margin-left: 1%;">Informasi pelatihan</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Pelatihan</th>
+                            <th>Batch</th>
+                            <th>Pelaksanaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cyber Security</td>
+                            <td>Batch 4</td>
+                            <td>Dimulai 10 Maret 2024</td>
+                        </tr>
+                        <tr>
+                            <td>Data Centre</td>
+                            <td>Batch 4</td>
+                            <td>Dimulai 10 Maret 2024</td>
+                        </tr>
+                        <tr>
+                            <td>Web development</td>
+                            <td>Batch 4</td>
+                            <td>Dimulai 10 Maret 2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="profile" class="profil" style="display: flex; flex-direction: column;">
+            <div>
+                <H2 style="margin-left: 1%;">Profil lembaga</H2>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div class="profiltitle" style="align-items: center; text-align: center;">
+                    <H2 style="line-height: 10%; margin-top: 20px;">Apa itu</H2>
+                    <H1>KURSUSIT.id??</H1>
+                </div>
+                <div class="desc">
+                    <p>KURSUSIT.id adalah platform marketplace edukasi IT dan pengembangan diri berbasis online yang
+                        dapat diakses kapan saja dan di mana saja untuk mendampingi generasi muda Indonesia
+                        #sampaijadibisa
+                    </p>
+                </div>
+            </div>
+            <div class="descprofil" style="display: flex; flex-direction: row; width: 100%; margin-bottom: 10%;">
+                <div style="width: 8%;"></div>
+                <div style="width: 90%;"> Sebuah pertanyaan dalam hati nurani, "Apa bener pendidikan cuman dibatasi oleh
+                    sekolah formal?" Faktanya, engga semua orang bisa sekolah formal dan nyatanya pendidikan formal
+                    belum bisa menyelesaikan masalah pengangguran di Indonesia. Di awal tahun 2019, kami coba membuat
+                    platform pendidikan vokasi untuk menjembatani skill gap yang dirasakan Generasi Y dan Z di Indonesia
+                    agar bisa berkompetisi di industri yang super cepat ini.
+                    Saat ini, 250.000+ user sudah belajar dan menjadi member di platform Luarsekolah, sudah puluhan
+                    trainer juga yang sudah mendaftar dan menjadi mentor di paltform kita. Masih banyak yang mesti kita
+                    lakukan, dengan bantuan kawan-kawan semua, kita bisa bangun pendidikan Indonesia menuju ke arah yang
+                    lebih baik.</div>
+            </div>
+            <div style="width: 2%;"></div>
+        </div>
+
+        <div class="berita" style="background-image: url(./image/bg3.jpg);" id="news">
+            <div>
+                <h2 style="margin-left: 1%;">
+                    Berita dan artikel
+                </h2>
+            </div>
+            <div class="berita1" style="display: flex; flex-direction: row;">
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./image/berita 1.jpeg" alt="gambar1">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan
+                            Kuliahnya</h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        pernah mendengar profesi teknisi komputer? Apa saja tugas teknisi komputer dan skill apa yang
+                        harus dimiliki?
+                    </div>
+                    <button class="read-button">Read</button>
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./image/berita 2.jpg" alt="gambar2">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat
+                            Guru, Yuk Daftar!</h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        Kemendikbudristek, LPDP, dan Harvard University membuka program pelatihan skill digital untuk
+                        guru. Sertifikat dari Harvard!
+                    </div>
+                    <button class="read-button">Read</button>
+
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./image/berita 3.jpg" alt="gambar3">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">
+                            Teknologi Informasi: Pengertian, Fungsi, Contoh, dan Prediksi Masa Depan
+                        </h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+
+                        Teknologi informasi atau TI berpengaruh besar pada kehidupan manusia. Ketahui pengertian,
+                        fungsi, contoh penerapan, dan prediksi di masa depan.
+                    </div>
+                    <button class="read-button">Read</button>
+
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./image/berita 4.jpg" alt="gambar4">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">
+                            ITS Buka Prodi S1 Rekayasa AI & Perangkat Lunak, Begini Prospeknya
+                        </h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        ITS membuka prodi S1 Rekayasa Perangkat Lunak (Software Engineering) dan S1 Rekayasa Kecerdasan
+                        Buatan (Artificial Intelligence/AI Engineering), nih!
+                    </div>
+                    <button class="read-button">Read</button>
+
+                </div>
+            </div>
+            <div style="text-align: right;">
+                more>>
+            </div>
+
+        </div>
+        <div class="galeri" id="gallery">
+            <div>
+                <H2 style="margin-left: 1%;">
+                    Galeri
+                </H2>
+            </div>
+
+            <div class="galerigrid">
+                <div class="card3">
+                    <img src="./image/data.jpg" alt="Gambar 1">
+
+                </div>
+                <div class="card3">
+                    <img src="./image/devops.jpg" alt="Gambar 2">
+
+                </div>
+                <div class="card3">
+                    <iframe id="player1" width="560" height="3"
+                        src="https://www.youtube.com/embed/5-JpEGxWvKU?autoplay=1&mute=1" frameborder="0"
+                        allowfullscreen></iframe>
+
+                </div>
+                <div class="card3">
+                    <iframe id="player2" width="560" height="3"
+                    src="https://www.youtube.com/embed/5-JpEGxWvKU?autoplay=1&mute=1" frameborder="0"
+                    allowfullscreen></iframe>
+
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div class="berita">
-        <div>
+    </div>
+
+    <div class="footer" id="contact" style="display: flex; flex-direction: column;">
+        <div class="contact">
             <h2 style="margin-left: 1%;">
-                Berita dan artikel
+                Contact
             </h2>
         </div>
-        <div class="berita1" style="display: flex; flex-direction: row;">
-            <div class="card2" style="display: flex; flex-direction: column;">
-                <div class="card2top">
-                    <img src="./image/berita 1.jpeg" alt="gambar1">
-                </div>
-                <div class="card2mid">
-                    <h3 style="font-size: x-small;">Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan Kuliahnya</h3>
-                </div>
-                <div class="card2bottom" style="font-size: xx-small;">
-                    pernah mendengar profesi teknisi komputer? Apa saja tugas teknisi komputer dan skill apa yang harus dimiliki?
-                </div>
+        <div class="contact2"
+            style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+            <div style="width: 50%; text-align: justify; padding: 20px;">
+                Tertarik untuk mengetahui lebih lanjut mengenai KURSUSIT.ID training ataupun sertifikasi? atau pertanyaan
+                lainnya? anda dapat bertanya secara langsung melalui chat whatsapp kami.
             </div>
-            <div class="card2"style="display: flex; flex-direction: column;">
-                <div class="card2top">
-                    <img src="./image/berita 2.jpg" alt="gambar2">
-                </div>
-                <div class="card2mid">
-                    <h3 style="font-size: x-small;">Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat Guru, Yuk Daftar!</h3>
-                </div>
-                <div class="card2bottom" style="font-size: xx-small;">
-                    Kemendikbudristek, LPDP, dan Harvard University membuka program pelatihan skill digital untuk guru. Sertifikat dari Harvard!
-                </div>
+            <div style="width: 25%; text-align: justify;">
+                <ul>
+                    <p>Contacts</p>
+                    <li>Jl Permata senaya no 18</li>
+                    <li>info@kursusit@gmail.com</li>
+                    <li>0822118111199</li>
+                    <li>Senin - Jumat 09.00 - 21.00</li>
+                </ul>
             </div>
-            <div class="card2" style="display: flex; flex-direction: column;">
-                <div class="card2top">
-                    <img src="./image/berita 3.jpg" alt="gambar3">
-                </div>
-                <div class="card2mid">
-                    <h3 style="font-size: x-small;">
-Teknologi Informasi: Pengertian, Fungsi, Contoh, dan Prediksi Masa Depan
-                    </h3>
-                </div>
-                <div class="card2bottom" style="font-size: xx-small;">
-                    
-Teknologi informasi atau TI berpengaruh besar pada kehidupan manusia. Ketahui pengertian, fungsi, contoh penerapan, dan prediksi di masa depan.
-                </div>
-            </div>
-            <div class="card2" style="display: flex; flex-direction: column;">
-                <div class="card2top">
-                    <img src="./image/berita 4.jpg" alt="gambar4">
-                </div>
-                <div class="card2mid">
-                    <h3 style="font-size: x-small;">
-ITS Buka Prodi S1 Rekayasa AI & Perangkat Lunak, Begini Prospeknya
-                    </h3>
-                </div>
-                <div class="card2bottom" style="font-size: xx-small;">
-                    ITS membuka prodi S1 Rekayasa Perangkat Lunak (Software Engineering) dan S1 Rekayasa Kecerdasan Buatan (Artificial Intelligence/AI Engineering), nih!
-                </div>
+            <div style="width: 25%; text-align: justify;">
+                <p>Services</p>
+                <ul>
+                    <li>Training</li>
+                    <li>Sertifikasi</li>
+                    <li>Event</li>
+                </ul>
             </div>
         </div>
-        <div style="text-align: right;">
-            more>>
-        </div>
-
     </div>
-    <div class="galeri">
-        <div>
-            <H2 style="margin-left: 1%;">
-            Galeri
-        </H2>
-        </div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
 
-<div class="footer">
-    <div class="contact">Contact</div>
-</div>
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth' // Animasi scroll
+                });
+            }
+        }
+    </script>
 
 </body>
+
 </html>
