@@ -6,410 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Title</title>
     <link rel="stylesheet" href="./style.css">
-    <style>
-        body {
-  margin: 0px;
-  font-family: Arial, sans-serif;
-}
-
-.navbar {
-  width: 100%;
-  height: 10vh;
-  /* background-color: lightgray; */
-  background-color: rgba(255, 255, 255, 0.893);
-  position: sticky;
-  top: 0;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-.logo {
-  width: 40%;
-  text-align: center;
-  border-right: 2px solid black;
-}
-
-.menu {
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh;
-  border: 0px solid black;
-  /* border-left: 2px solid black; */
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.697);
-}
-
-.menu a {
-  text-decoration: none;
-  color: black;
-  /* height: 100%; */
-}
-
-.menu a:hover {
-  background-color: lightblue;
-}
-
-.menu button {
-  font-weight: bolder !important;
-
-  width: auto;
-  height: 10vh;
-  background-color: rgba(255, 255, 255, 0.708);
-  border: 0px solid black !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.menu button:hover {
-  /* background-color: aqua; */
-  font-weight: bolder !important;
-  text-decoration: underline;
-  color: rgb(0, 57, 136);
-}
-
-.menu button:active {
-  transform: scale(1.1); /* Efek pop saat tombol ditekan */
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 80%;
-  width: 100%;
-}
-
-.main div {
-  width: 100%;
-  height: 20%;
-  /* Contoh tinggi setiap div di dalam main */
-  /* background-color: lightblue; */
-  /* border: 0.5px solid black; */
-}
-
-.programs {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  background-image: url(https://greatedu.co.id/_next/static/media/banner.6561ecd9.jpeg);
-  background-size: cover; /* Ensures the background image covers the entire div */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
-  padding-bottom: 30px;
-}
-
-.programs h2 {
-  border: 0px solid black;
-  color: #f0f0f0 !important;
-}
-
-.programs1 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 10px;
-  /* padding: 10px; */
-  border: 0px solid black !important;
-}
-
-.card {
-  background-color: rgb(214, 214, 214);
-  background-size: cover; /* Adjusts the size of the background image */
-  background-repeat: no-repeat; /* Ensures the background image doesn't repeat */
-  background-position: center; /* Centers the background image */
-  opacity: 90%;
-  border: 2px solid black;
-  text-align: center;
-  height: 50px !important;
-  width: 70% !important;
-  padding-top: 25%;
-  padding-bottom: 25%;
-  /* padding-left: 10px;
-padding-right: 10px; */
-  margin: 10%;
-  /* padding: 20px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px; 
-}
-
-.card:hover {
-  transform: scale(1.03); /* Memperbesar card ketika dihover */
-  cursor: pointer;
-}
-
-.card2:hover {
-  transform: scale(1.03); /* Memperbesar card ketika dihover */
-}
-
-.card h2 {
-  color: rgb(77, 77, 135) !important;
-}
-
-.footer {
-  width: 100%;
-  height: 10%;
-  background-color: lightgray;
-  /* border: 2px solid black; */
-  background-image: url(./image/bg2.jpg);
-  background-size: cover; 
-  background-repeat: no-repeat;
-  color: rgb(190, 192, 196);
-}
-
-.contact {
-  /* padding: 20px; */
-  color: rgb(169, 176, 186);
-}
-
-.Informasi {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  border: 0px solid black !important;
-  /* border: 2px solid black; */
-  /* padding: 10px; */
-}
-
-.Informasi table {
-  width: 100%;
-  padding-bottom: 50px;
-  /* border-collapse: collapse; */
-}
-
-.Informasi td,
-.Informasi th {
-  /* border: 1px solid black; */
-  /* padding: 8px; */
-  background-color: rgba(101, 119, 170, 0.549);
-  background-image: url(./image/bg2.jpg);
-  text-align: center;
-  color: aliceblue;
-}
-
-.profil {
-  background-image: url(./image/bg2.jpg);
-  background-size: cover; /* Ensures the background image covers the entire div */
-  background-repeat: no-repeat;
-  border: 0px solid rgba(255, 255, 255, 0) !important;
-  color: #c5c5c6;
-}
-
-.profiltitle {
-  border: 0px solid rgba(255, 255, 255, 0) !important;
-}
-
-.desc {
-  padding: 2%;
-  border: 0px solid rgba(255, 255, 255, 0) !important;
-}
-
-.berita {
-  background-color: rgb(250, 250, 250);
-}
-
-.berita1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card2 {
-  background-color: rgb(230, 242, 248);
-  border: 2px solid black;
-  text-align: center;
-  height: 220px !important;
-  width: 170px !important;
-  /* padding-top: 25%; */
-  /* padding-bottom: 25%; */
-  margin: 3%;
-  /* padding: 20px; */
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  border-radius: 10px;
-}
-
-.card2top {
-  height: 100px !important;
-  overflow: hidden; /* Menyembunyikan konten yang melampaui batas */
-  border-top-left-radius: 10px; 
-  border-top-right-radius: 10px; 
-}
-
-.card2mid {
-  height: 10%;
-  text-align: center;
-}
-
-.card2mid h3 {
-  margin-bottom: 0px;
-}
-
-.card2bottom {
-  height: 35%;
-  /* margin-top: 5%; */
-}
-
-.read-button {
-  border-radius: 10px; /* Membuat sudut tombol menjadi bulat */
-  padding: 5px 7px; /* Memberikan ruang di dalam tombol */
-  background-color: rgb(41, 53, 84); /* Warna latar belakang */
-  color: white; /* Warna teks */
-  border: none; /* Menghapus border */
-  cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
-  margin-left: 110px;
-  transition: background-color 0.3s ease; /* Transisi warna latar belakang saat hover */
-  /* align-items: center; */
-  /* justify-content: center; */
-}
-
-.read-button:hover {
-  background-color: darkblue; /* Warna latar belakang saat tombol dihover */
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.galeri {
-  width: 100%;
-  /* padding: 0%; */
-  background-color: rgb(226, 226, 226);
-}
-
-.galerigrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 0;
-  /* margin: 20px !important; */
-  /* height: 500px !important; */
-  justify-items: center;
-  /* Untuk pusatkan horizontal */
-  align-items: center;
-  /* Untuk pusatkan vertikal */
-}
-
-.card3 {
-  /* width: calc(50% - 10px); 50% width with 20px gap */
-  width: 400px !important;
-  height: 400px !important;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
-
-.card3 img {
-  height: 100%;
-  width: 100%;
-}
-
-.card3 iframe {
-  height: 100%;
-  width: 100%;
-}
-
-.menu button{
-    width: 100px !important;
-
-}
-
-.menu button:hover{
-    cursor: pointer;
-}
-
-.account{
-    display: flex;
-    align-items: center;
-    justify-content: right;
-}
-.account button{
-padding: 5px 10px;
-margin:5px;
-border: none;
-border-radius: 5px;
-background-color: #037081; /* Warna biru tua */
-color: white;
-font-size: 10px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-}
-
-
-.account button:hover {
-background-color: #125964; /* Warna biru tua saat tombol dihover */
-}
-
-
-.modal {
-display: none; 
-position: fixed; 
-z-index: 1; 
-left: 0;
-top: 0;
-width: 100%; 
-height: 100%; 
-overflow: auto; 
-background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content {
-background-color: #fefefe;
-margin: 15% auto;
-padding: 20px;
-border: 1px solid #888;
-width: 80%;
-max-width: 400px; /* Atur lebar maksimum form */
-border-radius: 5px; /* Tambahkan sudut bulat */
-}
-
-.account label, input, select, textarea {
-display: block;
-margin-bottom: 10px;
-width: 100%;
-}
-
-.close {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
-}
-
-#loginModalContent form {
-padding: 20px;
-}
-
-#loginModalContent form label {
-display: block;
-margin-bottom: 10px;
-}
-
-#loginModalContent form input[type="text"],
-#loginModalContent form input[type="password"] {
-width: 100%;
-padding: 8px;
-margin-bottom: 15px;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
-    </style>
 </head>
 
 <body>
@@ -429,9 +25,11 @@ border-radius: 5px;
     </div>
 
     <div class="main">
-        <div class="account">
+        <div class="account" id="account">
+            <div id="loggedname"></div>
             <button onclick="openLoginModal()">Login</button>
             <button onclick="openModal()">register</button>
+            <!-- <button onclick="openLogoutModal()">logout</button> -->
         </div>
         <div class="programs" id="programs">
             <H2 style="margin-left: 1%;">Pelatihan yang disediakan</H2>
@@ -519,7 +117,7 @@ border-radius: 5px;
             <div style="width: 2%;"></div>
         </div>
 
-        <div class="berita" style="background-image: url(./image/bg3.jpg);" id="news">
+        <div class="berita" style="background-image: url(./src/image/bg3.jpg);" id="news">
             <div>
                 <h2 style="margin-left: 1%;">
                     Berita dan artikel
@@ -528,7 +126,7 @@ border-radius: 5px;
             <div class="berita1" style="display: flex; flex-direction: row;">
                 <div class="card2" style="display: flex; flex-direction: column;">
                     <div class="card2top">
-                        <img src="./image/berita 1.jpeg" alt="gambar1">
+                        <img src="./src/image/berita 1.jpeg" alt="gambar1">
                     </div>
                     <div class="card2mid">
                         <h3 style="font-size: x-small;">Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan
@@ -542,7 +140,7 @@ border-radius: 5px;
                 </div>
                 <div class="card2" style="display: flex; flex-direction: column;">
                     <div class="card2top">
-                        <img src="./image/berita 2.jpg" alt="gambar2">
+                        <img src="./src/image/berita 2.jpg" alt="gambar2">
                     </div>
                     <div class="card2mid">
                         <h3 style="font-size: x-small;">Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat
@@ -557,7 +155,7 @@ border-radius: 5px;
                 </div>
                 <div class="card2" style="display: flex; flex-direction: column;">
                     <div class="card2top">
-                        <img src="./image/berita 3.jpg" alt="gambar3">
+                        <img src="./src/image/berita 3.jpg" alt="gambar3">
                     </div>
                     <div class="card2mid">
                         <h3 style="font-size: x-small;">
@@ -574,7 +172,7 @@ border-radius: 5px;
                 </div>
                 <div class="card2" style="display: flex; flex-direction: column;">
                     <div class="card2top">
-                        <img src="./image/berita 4.jpg" alt="gambar4">
+                        <img src="./src/image/berita 4.jpg" alt="gambar4">
                     </div>
                     <div class="card2mid">
                         <h3 style="font-size: x-small;">
@@ -601,28 +199,26 @@ border-radius: 5px;
                 </H2>
             </div>
 
-            <div class="galerigrid">
-                <div class="card3">
-                    <img src="./image/data.jpg" alt="Gambar 1">
-
+            <div class="gallery-wrap">
+                <img src="./src/image/back.png" alt="" id="backBtn"/>
+                <div class="gallery">
+                  <div style="height: 300px !important;">
+                    <span><img src="./src/image/devops.jpg" alt="" /></span>
+                    <span><img src="./src/image/database.jpg" alt="" /></span>
+                    <span><img src="./src/image/db.jpg" alt="" /></span>
+                  </div>
+                  <div style="height: 300px !important;">
+                    <span><img src="./src/image/data.jpg" alt="" /></span>
+                    <span>
+                        <video id="myVideo" src="./src/video/web2.mp4" controls autoplay loop></video>
+                    </span>
+                    <span>
+                        <video id="myVideo" src="./src/video/web1.mp4" controls autoplay loop></video>
+                    </span>
+                  </div>
                 </div>
-                <div class="card3">
-                    <img src="./image/devops.jpg" alt="Gambar 2">
-
-                </div>
-                <div class="card3">
-                    <iframe id="player1" width="560" height="3"
-                        src="https://www.youtube.com/embed/5-JpEGxWvKU?autoplay=1&mute=1" frameborder="0"
-                        allowfullscreen></iframe>
-
-                </div>
-                <div class="card3">
-                    <iframe id="player2" width="560" height="3"
-                    src="https://www.youtube.com/embed/5-JpEGxWvKU?autoplay=1&mute=1" frameborder="0"
-                    allowfullscreen></iframe>
-
-                </div>
-            </div>
+                <img src="./src/image/next.png" alt="" id="nextBtn"/>
+              </div>
         </div>
     </div>
     </div>
@@ -683,7 +279,7 @@ border-radius: 5px;
               <option value="other">Other</option>
             </select><br>
             
-            <button type="submitregister">Daftar</button>
+            <button type="submitregister" id="registerButton">Daftar</button>
           </form>
         </div>
       </div>
@@ -694,203 +290,196 @@ border-radius: 5px;
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Login</h2>
             <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="emailLogin">email:</label>
+                <input type="text" id="emailLogin" name="emailLogin" required>
     
-                <label for="loginPassword">Password:</label>
-                <input type="password" id="loginPassword" name="password" required>
+                <label for="passwordLogin">Password:</label>
+                <input type="password" id="passwordLogin" name="passwordLogin" required>
     
-                <button type="submitlogin">Login</button>
+                <button type="submitlogin" id="loginButton">Login</button>
             </form>
         </div>
     </div>
       
 
-    <script>        
-        console.log("not gg",registeredUsers);
+<script>
 
-function scrollToSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section) {
-                window.scrollTo({
-                    top: section.offsetTop,
-                    behavior: 'smooth' // Animasi scroll
-                });
-            }
-        }
-        
-        // Fungsi untuk menampilkan modal
+
+//##############################       modal ######################
+  // Fungsi untuk menampilkan modal register
   function openModal() {
-    var modal = document.getElementById("registerModal");
-    modal.style.display = "block";
+      var modal = document.getElementById("registerModal");
+      modal.style.display = "block";
   }
 
-  // Fungsi untuk menyembunyikan modal
+  // Fungsi untuk menutup modal register
   function closeModalreg() {
-    var modal = document.getElementById("registerModal");
-    modal.style.display = "none";
+      var modal = document.getElementById("registerModal");
+      modal.style.display = "none";
   }
 
-          // Fungsi untuk menampilkan modal login
-function openLoginModal() {
-var modal = document.getElementById("loginModal");
-modal.style.display = "block";
-        }
-
-        // Event listener untuk tombol login
-        // document.getElementById("loginBtn").addEventListener("click", function() {
-        //     openLoginModal();
-        // });
-
-function closeModal() {
-    var modal = document.getElementById("loginModal");
-    modal.style.display = "none";
+  // Fungsi untuk menampilkan modal login
+  function openLoginModal() {
+      var modal = document.getElementById("loginModal");
+      modal.style.display = "block";
   }
-    
 
-  
+  // Fungsi untuk menutup modal login
+  function closeModal() {
+      var modal = document.getElementById("loginModal");
+      modal.style.display = "none";
+  }
+
+  // Fungsi untuk scroll otomatis
+  function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+          window.scrollTo({
+              top: section.offsetTop,
+              behavior: 'smooth' // Animasi scroll
+          });
+      }
+  }
+
+  // Fungsi untuk melakukan registrasi
+  document.getElementById('registerButton').addEventListener('click', async function(event) {
+      event.preventDefault();
+      
+      const formData = new FormData(document.getElementById('registerForm'));
+      const requestData = Object.fromEntries(formData.entries());
+      
+      try {
+          const response = await fetch('/users/register', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(requestData)
+          });
+
+          if (!response.ok) {
+              const errorMessage = await response.text();
+              throw new Error(errorMessage);
+          }
+
+          alert('Registrasi berhasil!');
+          closeModalreg();
+
+      } catch (error) {
+          console.error('Error during registration:', error);
+          alert('Registrasi gagal. Silakan coba lagi.');
+      }
+  });
+
+  // Fungsi untuk melakukan login
+  document.getElementById('loginForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('emailLogin').value;
+      const password = document.getElementById('passwordLogin').value;
+
+      try {
+          const response = await fetch('/users/login', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ email, password })
+          });
+
+          const responseData = await response.json();
+
+          if (response.ok) {
+              alert(responseData.message);
+              closeModal();
+              displayLogoutButton()
+              displayFullname() //memanggil nama user yang akan ditampilkan ke web 
+            
+
+          } else {
+              alert(responseData.message);
+          }
+      } catch (error) {
+          console.error('Error during login:', error);
+          alert('Login gagal. Silakan coba lagi.');
+      }
+  });
 
 
-//############################# REGISTER USER #########################################
+  //######################### percobaan ambil nama ##############################
+  async function getFullnameByEmail(email) {
+    try {
+        console.log('tes email', email);
+        const response = await fetch(`/users/fullname?email=${email}`);
+        const data = await response.json();
+        console.log('tes email 2', data);
+        return data.fullname;
+    } 
+    catch (error) {
+        console.error('Error fetching fullname:', error);
+        throw new Error('Failed to fetch fullname');
+    }
+}
 
-// Objek untuk menyimpan data pengguna yang terdaftar
-var registeredUsers = [];
-
-// Fungsi untuk menyimpan data pengguna yang terdaftar
-function registerUser(fullname, email, password, address, gender) {
-    var newUser = {
-        fullname: fullname,
-        email: email,
-        password: password,
-        address: address,
-        gender: gender
-    };
-    
-    // Ambil data pengguna yang sudah terdaftar (jika ada)
-    var registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-    
-    // Tambahkan pengguna baru ke daftar pengguna terdaftar
-    registeredUsers.push(newUser);
-    
-    // Simpan kembali daftar pengguna terdaftar ke localStorage
-    localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
-    
-    alert("Registered successfully."); // Tampilkan pesan berhasil
+// Fungsi untuk menampilkan fullname di halaman HTML
+async function displayFullname() {
+    const emailInput = document.getElementById('emailLogin').value;
+    try {
+        const fullname = await getFullnameByEmail(emailInput);
+        const loggednameElement = document.getElementById('loggedname');
+        loggednameElement.innerHTML = `
+        <h2 class="ambilnamaloginuser" ">Selamat Datang! ${fullname}</h2>`;
+    } catch (error) {
+        console.error('Failed to display fullname:', error);
+    }
 }
 
 
-// Fungsi untuk memeriksa apakah pengguna terdaftar
-function isUserRegistered(email, password) {
-    for (var i = 0; i < registeredUsers.length; i++) {
-        if (registeredUsers[i].email === email && registeredUsers[i].password === password) {
-            return true;
-        }
-    }
-    return false;
-} 
 
+//################### percobaan pergantian tombol #######################
+async function displayLogoutButton() {
+    const accountDiv = document.getElementById('account');
+    // Sembunyikan tombol login dan register
+    accountDiv.innerHTML = `
+        <div id="loggedname">aa</div>
+        <button onclick="openLogoutModal()">Logout</button>
+    `;
+    
+    // Mengatur tombol login dan register menjadi nonaktif setelah tombol logout ditampilkan
+    document.getElementById('loginButton').disabled = true;
+    document.getElementById('registerButton').disabled = true;
 
-// Fungsi untuk menampilkan pesan selamat datang setelah login berhasil
-function showWelcomeMessage(username) {
-    var welcomeDiv = document.createElement("div");
-    welcomeDiv.textContent = "Hai, selamat datang " + username;
-    document.body.appendChild(welcomeDiv);
-}
-
-// Event listener untuk submit form register
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Mencegah pengiriman formulir
-
-    // Ambil nilai-nilai dari formulir
-    var fullname = document.getElementById("fullname").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var address = document.getElementById("address").value;
-    var gender = document.getElementById("gender").value;
-
-    // Lakukan validasi input
-    if (!fullname || !email || !password || !address || !gender) {
-        alert("Mohon lengkapi semua kolom.");
-        return; // Keluar dari fungsi jika ada kolom yang kosong
-    }
-
-    // if (!isValidEmail(email)) {
-    //     alert("Mohon masukkan email yang valid.");
-    //     return; // Keluar dari fungsi jika email tidak valid
-    // }
-
-    // if (!isValidPassword(password)) {
-    //     alert("Password harus memiliki panjang minimal 6 karakter.");
-    //     return; // Keluar dari fungsi jika password tidak valid
-    // }
-
-    // Simpan data pengguna yang terdaftar
-    registerUser(fullname, email, password, address, gender);
-    alert("Registrasi berhasil.");
-    console.log("gg",registeredUsers);
-
-    // Tutup modal register setelah submit
-    closeModalreg();
+    document.addEventListener('DOMContentLoaded', function() {
+    // Panggil displayLogoutButton() di sini
+    displayLogoutButton();
 });
-
-// Event listener untuk submit form login
-// document.getElementById("loginForm").addEventListener("submit", function(event) {
-//     event.preventDefault(); // Mencegah pengiriman formulir
-
-//     // Ambil nilai-nilai dari formulir login
-//     var email = document.getElementById("username").value;
-//     var password = document.getElementById("loginPassword").value;
-
-//     // Periksa apakah pengguna terdaftar
-//     if (isUserRegistered(email, password)) {
-//         // Jika login berhasil, tampilkan pesan selamat datang
-//         showWelcomeMessage(email);
-//         // Tutup modal login setelah berhasil login
-//         closeModal();
-//     } else {
-//         // Jika login gagal, tampilkan pesan error atau tindakan yang sesuai
-//         alert("Email atau password salah. Silakan coba lagi.");
-//     }    
-// });
+}
 
 
 
 
-//################################# LOGIN #########################################
+//############################################################## slider
+let scrollContainer = document.querySelector('.gallery')
+        let backBtn = document.getElementById('backBtn')
+        let nextBtn = document.getElementById('nextBtn')
 
-// Event listener untuk submit form login
-document.getElementById("loginForm").addEventListener("submitlogin", function(event) {
-    event.preventDefault(); // Mencegah pengiriman formulir
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault()
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = 'auto'
 
-    // Ambil nilai-nilai dari formulir login
-    var email = document.getElementById("username").value;
-    var password = document.getElementById("loginPassword").value;
+        })
 
-    // Validasi input
-    if (!email || !password) {
-        alert("Mohon lengkapi email dan password.");
-        return; // Keluar dari fungsi jika ada kolom yang kosong
-    }
+        nextBtn.addEventListener("click", ()=> {
+            scrollContainer.style.scrollBehavior = 'smooth'
+            scrollContainer.scrollLeft += 900
+        })
 
-    // Periksa apakah pengguna terdaftar dan password cocok
-    var userFound = false;
-    for (var i = 0; i < registeredUsers.length; i++) {
-        if (registeredUsers[i].email === email && registeredUsers[i].password === password) {
-            userFound = true;
-            break;
-        }
-    }
+        backBtn.addEventListener("click", ()=> {
+            scrollContainer.style.scrollBehavior = 'smooth'
+            scrollContainer.scrollLeft -= 900
+        })
 
-    if (userFound) {
-        // Jika login berhasil, tampilkan pesan selamat datang
-        showWelcomeMessage(email);
-        // Tutup modal login setelah berhasil login
-        closeModal();
-    } else {
-        // Jika login gagal, tampilkan pesan kesalahan menggunakan alert
-        alert("Email atau password salah. Silakan coba lagi.");
-    }});
-
-        </script>
+</script>
     </body>
 </html>
