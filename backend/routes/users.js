@@ -7,55 +7,44 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 router.use(bodyParser.json());
+
+
 const usersFilePath = path.join(__dirname, '../users.json');
 
+// Middleware untuk mengambil data pengguna dari berkas JSON
+const getUsers = () => {
+    const usersData = fs.readFileSync(usersFilePath);
+    return JSON.parse(usersData);
+};
 
+// Middleware untuk menulis data pengguna ke berkas JSON
+const saveUsers = (users) => {
+    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+};
 
-//############################ REGISTER ##############################
+// Route untuk registrasi pengguna
 router.post('/register', (req, res) => {
-  // Baca data pengguna dari file JSON
-  fs.readFile(usersFilePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading file:', err);
-      return res.status(500).json({ message: 'Server error' });
-    }
-
-    // Parsing data JSON ke JavaScript object
-    let users = JSON.parse(data);
-
-    // Dapatkan data dari body request
+    // Mendapatkan data dari formulir registrasi
     const { fullname, email, password, address, gender } = req.body;
 
-    // Cek apakah email sudah terdaftar
-    const existingUser = users.users.find(user => user.email === email);
+    // Memuat data pengguna dari berkas JSON
+    const users = getUsers();
+
+    // Memeriksa apakah email sudah terdaftar
+    const existingUser = users.find(user => user.email === email);
     if (existingUser) {
-      return res.status(400).json({ message: 'Email sudah terdaftar' });
+        return res.status(400).json({ message: 'Email sudah terdaftar' });
     }
 
-    // Buat objek pengguna baru
-    const newUser = {
-      id: users.users.length + 1,
-      fullname,
-      email,
-      password, 
-      address,
-      gender
-    };
+    // Menambahkan pengguna baru ke dalam array pengguna
+    const newUser = { fullname, email, password, address, gender };
+    users.push(newUser);
 
-    // Tambahkan pengguna baru ke array pengguna
-    users.users.push(newUser);
+    // Menyimpan data pengguna ke dalam berkas JSON
+    saveUsers(users);
 
-    // Tulis kembali data ke file JSON
-    fs.writeFile(usersFilePath, JSON.stringify(users, null, 2), err => {
-      if (err) {
-        console.error('Error writing file:', err);
-        return res.status(500).json({ message: 'Server error' });
-      }
-
-      // Kirim respons sukses
-      res.status(200).json({ message: 'Registrasi berhasil' });
-    });
-  });
+    // Memberikan respons sukses
+    res.status(200).json({ message: 'Registrasi berhasil' });
 });
 
 

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Cyber Security",
+        "description": "Cyber Security is the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks. It also involves protecting the confidentiality, integrity, and availability of information and information systems.",
+        "image": "cyber_security_image.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Fullstack Web development",
+        "description": "Fullstack Web Development involves both the frontend and backend aspects of web development. It includes designing user interfaces, implementing user interactions, developing server-side logic, and managing databases. Fullstack developers are proficient in both frontend and backend technologies.",
+        "image": "fullstack_web_dev_image.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Data Centre Facilities Management",
+        "description": "Data Centre Facilities Management involves the efficient operation and maintenance of data center infrastructure, including power, cooling, networking, and security systems. It ensures that data center facilities are reliable, secure, and environmentally sustainable.",
+        "image": "data_centre_management_image.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Enterprise Architecture with TOGAF",
+        "description": "Enterprise Architecture with TOGAF (The Open Group Architecture Framework) involves the design and planning of an organization's structure, processes, information systems, and technology infrastructure to achieve business objectives. TOGAF provides a framework and methodology for creating and implementing enterprise architectures.",
+        "image": "togaf_enterprise_architecture_image.jpg"
+    },
+    {
+        "id": 5,
+        "title": "IT Risk and Audit with COBIT 2019",
+        "description": "IT Risk and Audit with COBIT 2019 focuses on managing IT-related risks and ensuring compliance with regulations and standards. COBIT (Control Objectives for Information and Related Technologies) provides a framework for effective IT governance and risk management.",
+        "image": "cobit_2019_image.jpg"
+    },
+    {
+        "id": 6,
+        "title": "IT Management with ITIL v4",
+        "description": "IT Management with ITIL v4 (Information Technology Infrastructure Library) involves the planning, delivery, and support of IT services to meet the needs of an organization. ITIL v4 provides best practices for IT service management, including service strategy, design, transition, operation, and continual improvement.",
+        "image": "itil_v4_image.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Web Development Fundamentals",
+        "description": "Learn the basics of web development including HTML, CSS, and JavaScript.",
+        "image": "web_dev_fundamentals.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Web Introduction to Python Programming",
+        "description": "Get started with Python programming language from scratch.",
+        "image": "python_intro.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Web service with GOLANG",
+        "description": "Explore the world software and learn basic golang language and techniques.",
+        "image": "data_science_beginners.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Web Machine Learning Essentials",
+        "description": "Discover the essentials of machine learning and its applications.",
+        "image": "machine_learning_essentials.jpg"
+    }
+]

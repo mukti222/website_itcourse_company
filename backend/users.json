@@ -1,24 +1,16 @@
 [
-    {
-        "fullname": "John Doe",
-        "email": "john@example.com",
-        "password": "password123",
-        "address": "123 Main Street",
-        "gender": "male"
-    },
-    {
-        "fullname": "Jane Smith",
-        "email": "jane@example.com",
-        "password": "securepassword",
-        "address": "456 Elm Street",
-        "gender": "female"
-    },
-    {
-        "fullname": "Haryo Mukti Wibowo",
-        "email": "muk",
-        "password": "muk",
-        "address": "kk",
-        "gender": "male"
-      }
+  {
+    "fullname": "John Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "address": "123 Street",
+    "gender": "male"
+  },
+  {
+    "fullname": "Jane Doe",
+    "email": "jane@example.com",
+    "password": "password456",
+    "address": "456 Avenue",
+    "gender": "female"
+  }
 ]
-
