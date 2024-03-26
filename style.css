@@ -32,22 +32,27 @@ align-items: center;
 height: 10vh;
 border: 0px solid black;
 /* border-left: 2px solid black; */
-z-index: 1000;
+z-index: 2000;
 background-color: rgba(255, 255, 255, 0.697);
 }
 
 .menu a {
 text-decoration: none;
 color: black;
+z-index: 2000;
+
 /* height: 100%; */
 }
 
 .menu a:hover {
 background-color: lightblue;
+z-index: 2000;
+
 }
 
 .menu button {
 font-weight: bolder !important;
+z-index: 2000;
 
 width: auto;
 height: 10vh;
@@ -61,6 +66,8 @@ transition: background-color 0.3s ease, color 0.3s ease;
 font-weight: bolder !important;
 text-decoration: underline;
 color: rgb(0, 57, 136);
+z-index: 2000;
+
 }
 
 .menu button:active {
@@ -169,7 +176,7 @@ border: 0px solid black !important;
 
 .Informasi table {
 width: 100%;
-padding-bottom: 50px;
+/* padding-bottom: 50px; */
 /* border-collapse: collapse; */
 }
 
@@ -291,6 +298,8 @@ align-items: center;
 
 .menu button{
 width: 100px !important;
+z-index: 2000;
+
 
 }
 
@@ -481,5 +490,183 @@ margin: 10px;
 /* filter: grayscale(0); */
 cursor: pointer;
 /* transform: scale(1.1); */
+}
+
+
+
+/*########################################### search box ################################## */
+.searchbox {
+    width: 100px; /* Lebar div */
+    height: 100%; /* Tinggi div */
+    display: flex; /* Menggunakan flexbox untuk pemosisian */
+    justify-content: center; /* Posisikan ikon secara horizontal di tengah */
+    align-items: center; /* Posisikan ikon secara vertikal di tengah */
+    cursor: pointer;
+    background-color: transparent; /* Hapus warna latar belakang */
+}
+
+.search-icon {
+    width: 30px; /* Ukuran gambar ikon */
+    height: auto; /* Biarkan tingginya menyesuaikan */
+}
+
+
+
+
+
+
+/*####################################modal #########################*/
+
+/* Konten modal */
+.modal-content-search {
+    background-color: #fefefe;
+    margin: 20% auto; /* Letakkan modal di tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    /* width: 80%; */
+    /* width: 400px; */
+    border-radius: 10px;
+}
+
+.modal-content-search-display {
+    background-color: #fefefe;
+    margin: 20% auto; /* Letakkan modal di tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    /* width: 80%; */
+    /* width: 400px; */
+    border-radius: 10px;
+}
+
+/* .searchResultsContent{
+    background-color: #fefefe;
+    margin: 20% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+
+    border-radius: 10px;
+} */
+
+/* Tombol Close */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animasi */
+.modal-content-search {
+    animation: zoom 0.3s;
+    justify-content: center;
+    align-items: center;
+    z-index: 11000;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Style untuk input search */
+.search-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Style untuk tombol search */
+.search-input:focus {
+    outline: none;
+    border-color: dodgerblue;
+}
+
+/* Style untuk tombol search */
+.search-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: #007bff;
+}
+
+
+
+
+
+
+
+/* ####################################   racik modal ###################### */
+/* Style untuk card course */
+.cardcourse {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+.cardcourse:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Style untuk left side course */
+.leftsidecourse {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.leftsidecourse img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style untuk right side course */
+.rightsidecourse {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titlecourse {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.desccourse {
+    font-size: 14px;
 }
 

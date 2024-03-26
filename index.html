@@ -10,19 +10,43 @@
 
 <body>
 
-    <div class="navbar">
-  <div class="logo" style="font-family:'Segoe UI'; font-weight: bolder; font-size: x-large;
-  color: rgb(77, 77, 135) !important;
-   ">KURSUSIT.ID</div>
-<div class="menu">
-    <button onclick="scrollToSection('programs')">Programs</button>
-    <button onclick="scrollToSection('informasi')">Informasi</button>
-    <button onclick="scrollToSection('profile')">Profile</button>
-    <button onclick="scrollToSection('news')">News</button>
-    <button onclick="scrollToSection('gallery')">Gallery</button>
-    <button onclick="scrollToSection('contact')">Contact</button>
-</div>
+<div class="navbar">
+    <div class="logo" style="font-family:'Segoe UI'; font-weight: bolder; font-size: x-large; color: rgb(77, 77, 135) !important;">
+        KURSUSIT.ID</div>
+        <div class="searchbox" onclick="openSearchModal()">
+            <img src="./src/image/searchicon.png" alt="Search Icon" class="search-icon">
+        </div>
+
+        <div id="searchModal" class="modal">
+            <div class="modal-content-search">
+                <span class="close" onclick="closeSearchModal()">&times;</span>
+                <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+                <button onclick="search()">Search</button>
+            </div>
+        </div>
+
+        <!-- Konten hasil pencarian -->
+<div id="searchResultsModal" class="modal">
+    <div class="modal-content-search-display" id="searchResultsContent">
     </div>
+</div>
+
+        <!-- Container for displaying courses -->
+        <div id="coursesContainer" class="courses-container">
+            <!-- Courses will be dynamically added here -->
+        </div>
+        <!-- ############################### percobaan ############################ -->
+
+
+    <div class="menu">
+        <button onclick="scrollToSection('programs')">Programs</button>
+        <button onclick="scrollToSection('informasi')">Informasi</button>
+        <button onclick="scrollToSection('profile')">Profile</button>
+        <button onclick="scrollToSection('news')">News</button>
+        <button onclick="scrollToSection('gallery')">Gallery</button>
+        <button onclick="scrollToSection('contact')">Contact</button>
+    </div>
+</div>
 
     <div class="main">
         <div class="account" id="account">
@@ -33,25 +57,7 @@
         </div>
         <div class="programs" id="programs">
             <H2 style="margin-left: 1%;">Pelatihan yang disediakan</H2>
-            <div class="programs1">
-                <div class="card">
-                    <h2>Cyber Security</h2>
-                </div>
-                <div class="card">
-                    <h2>Fullstack Web development</h2>
-                </div>
-                <div class="card">
-                    <h2>Data Centre Facilities Management</h2>
-                </div>
-                <div class="card">
-                    <h2>Enterprise Architecture with TOGAF</h2>
-                </div>
-                <div class="card">
-                    <h2>IT Risk and Audit with COBIT 2019</h2>
-                </div>
-                <div class="card">
-                    <h2>IT Management with ITIL v4</h2>
-                </div>
+            <div class="programs1" id="programs1">
             </div>
         </div>
         <div class="Informasi" id="informasi">
@@ -84,6 +90,9 @@
                         </tr>
                     </tbody>
                 </table>
+                <div style="padding-left: 30px; width: 90%; display: flex; align-items: center; justify-content: center;"><p style="">
+                    Tertarik untuk mengembangkan keahlian Anda dalam bidang Cyber Security, Data Centre Management, dan Web Development? Kami punya kabar baik! Kami sedang mengadakan diskon spesial untuk Batch 4 yang akan dimulai pada tanggal 10 Maret 2024. Jangan lewatkan kesempatan ini untuk mengikuti pelatihan dengan harga terjangkau dan mendapatkan pengetahuan yang berharga dalam dunia teknologi informasi. Segera daftarkan diri Anda dan manfaatkan diskon ini sebelum kehabisan tempat!
+                </p></div>
             </div>
         </div>
         <div id="profile" class="profil" style="display: flex; flex-direction: column;">
@@ -304,6 +313,29 @@
 
 <script>
 
+//############################# percobaan ambil course lalu tampilkan ke depan ##################
+fetch('./backend/courses.json')
+    .then(response => response.json())
+    .then(data => {
+        const programsContainer = document.getElementById('programs1');
+
+        // Loop through each course and create HTML elements to display them
+        for (let i = 0; i < data.length && i < 6; i++) {
+            const course = data[i];
+
+            const courseCard = document.createElement('div');
+            courseCard.classList.add('card');
+
+            const courseTitle = document.createElement('h2');
+            courseTitle.textContent = course.title;
+
+            courseCard.appendChild(courseTitle);
+            programsContainer.appendChild(courseCard);
+        }
+    })
+    .catch(error => console.error('Error fetching courses:', error));
+
+
 
 //##############################       modal ######################
   // Fungsi untuk menampilkan modal register
@@ -479,6 +511,86 @@ let scrollContainer = document.querySelector('.gallery')
             scrollContainer.style.scrollBehavior = 'smooth'
             scrollContainer.scrollLeft -= 900
         })
+
+
+
+//######################################### search box ##########################################
+
+function openSearchModal() {
+        const searchModal = document.getElementById('searchModal');
+        const modalContent = document.querySelector('.modal-content-search');
+        searchModal.style.display = 'block';
+        modalContent.style.width = '800px';
+    }
+
+    function openDisplaySearchModal(){
+        const searchResultsModal = document.getElementById('searchResultsModal');
+        const modalContent = document.querySelector('.modal-content-search-display');
+        searchResultsModal.style.display = 'block';
+        modalContent.style.width = '800px';
+    }
+
+
+    function closeSearchModal() {
+        const searchModal = document.getElementById('searchModal');
+        searchModal.style.display = 'none';
+    }
+
+    function closeDisplaySearchModal() {
+        const searchModal = document.getElementById('searchResultsModal');
+        searchModal.style.display = 'none';
+        closeSearchModal()
+    }
+
+    async function search() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
+        fetch('./backend/courses.json')
+            .then(response => response.json())
+            .then(data => {
+                const searchResults = data.filter(course => {
+                    return course.title.toLowerCase().includes(searchInput);
+                });
+                console.log('tes', searchResults);
+                closeSearchModal()
+                displaySearchResults(searchResults);
+            })
+            .catch(error => console.error('Error fetching courses:', error));
+    }
+
+    async function displaySearchResults(results) {
+        openDisplaySearchModal()
+        const modalContent = document.getElementById('searchResultsContent');
+        // modalContent.innerHTML = ''; // Clear previous search results
+
+        // Menambahkan tombol close
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close');
+    closeButton.innerHTML = '&times;';
+    closeButton.onclick = closeDisplaySearchModal;
+    modalContent.appendChild(closeButton);
+
+        results.forEach(course => {
+            const courseCard = document.createElement('div');
+            courseCard.classList.add('cardcourse');
+
+            const leftSide = document.createElement('div');
+            leftSide.classList.add('leftsidecourse');
+            leftSide.innerHTML = `<img src="./backend/${course.image}" alt="${course.title}" style="width: 100%; height: 100%;">`;
+
+            const rightSide = document.createElement('div');
+            rightSide.classList.add('rightsidecourse');
+            rightSide.innerHTML = `<div class='titlecourse'>${course.title}</div>
+                                   <div class='desccourse'>${course.description}</div>`;
+
+            courseCard.appendChild(leftSide);
+            courseCard.appendChild(rightSide);
+
+            modalContent.appendChild(courseCard);
+            modalContent.style.width = '800px'
+        });
+
+        // openSearchModal(); // Open modal to display search results
+    }
 
 </script>
     </body>
