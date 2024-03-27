@@ -35,6 +35,39 @@
         <div id="coursesContainer" class="courses-container">
             <!-- Courses will be dynamically added here -->
         </div>
+        
+        
+        <!-- ############################### percobaan ############################ -->
+        <div id="myModal" class="modal">
+            <div class="modal-content-course">
+                <span class="closecourse">&times;</span>
+                <div class="modalcourses">
+                    <div class="coursecontainleft">
+                        <img id="modalImage" src="" alt="Course Image">
+                    </div>
+                    <div class="coursecontainright">
+                        <div class="coursecardtitle">
+                            <h3 id="modalTitle"></h3>
+                        </div>
+                        <div class="coursecarddesc">
+                            <p id="modalDescription"></p>
+                        </div>
+                        <div class="coursecuricullum">
+                            <p id="modalCurriculum"></p>
+                        </div>
+                        <div class="jadwalcourse">
+                            <p> Jadwal : Setiap Hari Jumat - Minggu Jam 19.00 - 21.00</p>
+                        </div>
+                        <div class="mentor">
+                            <p id="modalMentor"></p>
+                        </div>
+                        <div class="coursecost">
+                            <p id="modalCost"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- ############################### percobaan ############################ -->
 
 
@@ -313,27 +346,73 @@
 
 <script>
 
-//############################# percobaan ambil course lalu tampilkan ke depan ##################
+//############################# percobaan ambil informasi course ##################################
 fetch('./backend/courses.json')
-    .then(response => response.json())
-    .then(data => {
-        const programsContainer = document.getElementById('programs1');
+            .then(response => response.json())
+            .then(data => {
+                const programsContainer = document.getElementById('programs1');
 
-        // Loop through each course and create HTML elements to display them
-        for (let i = 0; i < data.length && i < 6; i++) {
-            const course = data[i];
+                // Loop through each course and create HTML elements to display them
+                data.forEach(course => {
+                    const courseCard = document.createElement('div');
+                    courseCard.classList.add('card');
 
-            const courseCard = document.createElement('div');
-            courseCard.classList.add('card');
+                    const courseTitle = document.createElement('h2');
+                    courseTitle.textContent = course.title;
 
-            const courseTitle = document.createElement('h2');
-            courseTitle.textContent = course.title;
+                    courseCard.appendChild(courseTitle);
+                    programsContainer.appendChild(courseCard);
 
-            courseCard.appendChild(courseTitle);
-            programsContainer.appendChild(courseCard);
-        }
-    })
-    .catch(error => console.error('Error fetching courses:', error));
+                    courseCard.addEventListener('click', () => {
+                        // Populate modal with course data
+                        document.getElementById('modalImage').src = course.image;
+                        document.getElementById('modalTitle').textContent = course.title;
+                        document.getElementById('modalDescription').textContent = course.description;
+                        document.getElementById('modalCurriculum').textContent = "Curriculum: " + course.curriculum.join(", ");
+                        document.getElementById('modalMentor').textContent = "Mentor: " + course.mentor;
+                        document.getElementById('modalCost').textContent = "Biaya : Rp. " + course.cost;
+
+                        // Display the modal
+                        document.getElementById('myModal').style.display = 'block';
+                    });
+                });
+            })
+            .catch(error => console.error('Error fetching courses:', error));
+
+        // Close the modal when the close button is clicked
+        document.getElementsByClassName('closecourse')[0].addEventListener('click', () => {
+            document.getElementById('myModal').style.display = 'none';
+        });
+
+        // Close the modal when the user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        });
+
+
+//############################# percobaan ambil course lalu tampilkan ke depan ##################
+// fetch('./backend/courses.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         const programsContainer = document.getElementById('programs1');
+
+//         // Loop through each course and create HTML elements to display them
+//         for (let i = 0; i < data.length && i < 6; i++) {
+//             const course = data[i];
+
+//             const courseCard = document.createElement('div');
+//             courseCard.classList.add('card');
+
+//             const courseTitle = document.createElement('h2');
+//             courseTitle.textContent = course.title;
+
+//             courseCard.appendChild(courseTitle);
+//             programsContainer.appendChild(courseCard);
+//         }
+//     })
+//     .catch(error => console.error('Error fetching courses:', error));
 
 
 
