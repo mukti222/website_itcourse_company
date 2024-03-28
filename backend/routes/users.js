@@ -52,6 +52,7 @@ router.post('/register', (req, res) => {
 //################################# Login ################################
 let isLoggedIn = false;
 let nameuserloged = false
+let emailLoggedin = []
 
 router.post('/login', (req, res) => {
   // Baca data dari file users.json
@@ -83,12 +84,13 @@ router.post('/login', (req, res) => {
       // Jika email dan password cocok, kirim respons berhasil
       res.status(200).json({ message: 'Login berhasil' });
       isLoggedIn = true;
+      emailLoggedin = email;
   });
 });
 
 router.get('/isLoggedIn', (req, res) => {
   // Kirim status isLoggedIn saat ini sebagai respons
-  res.status(200).json({ nameuserloged });
+  res.status(200).json({ isLoggedIn, nameuserloged, emailLoggedin });
 });
 
 
@@ -100,7 +102,6 @@ router.post('/logout', (req, res) => {
 
 
 //######################## percobaan ambil name ##########################
-
 router.get('/fullname', (req, res) => {
     const { email } = req.query;
 
@@ -123,8 +124,13 @@ router.get('/fullname', (req, res) => {
         }
 
         // Jika pengguna ditemukan, kirimkan respons dengan fullname pengguna
-        res.status(200).json({ fullname: user.fullname });
+        res.status(200).json({ fullname: user.fullname,
+            email: user.email,
+            address: user.address,
+            gender: user.gender });
     });
 });
+
+
 
 module.exports = router;
