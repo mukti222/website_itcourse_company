@@ -20,7 +20,7 @@
         <div id="searchModal" class="modal">
             <div class="modal-content-search">
                 <span class="close" onclick="closeSearchModal()">&times;</span>
-                <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+                <input type="text" id="searchInput" placeholder="Search Courses" class="search-input">
                 <button onclick="search()">Search</button>
             </div>
         </div>
@@ -37,11 +37,11 @@
         </div>
         
         
-        <!-- ############################### percobaan ############################ -->
+        <!-- ############################### percobaan modal course ############################ -->
         <div id="myModal" class="modal">
             <div class="modal-content-course">
                 <span class="closecourse">&times;</span>
-                <div class="modalcourses">
+                <div class="modalcourses" style="border-radius: 50px;">
                     <div class="coursecontainleft">
                         <img id="modalImage" src="" alt="Course Image">
                     </div>
@@ -64,11 +64,46 @@
                         <div class="coursecost">
                             <p id="modalCost"></p>
                         </div>
+                        <div style="display: flex;
+                        justify-content: right;
+                        align-items: right;">
+                            <button style="background-color: #1E488F; 
+               background-image: linear-gradient(to bottom, #0a49b5, #15545e); 
+               color: white; /* Warna teks putih */
+               border: none; /* Tidak ada border */
+               border-radius: 10px; /* Corner bulat */
+               padding: 10px 20px; /* Padding */
+               font-size: 16px; /* Ukuran font */
+               cursor: pointer; /* Kursor pointer */
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow */
+               margin: 10px;
+               display: flex;
+               justify-content: right;
+               align-items: right;
+               outline: none; /* Tidak ada outline saat focus */">Daftar</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- ############################### percobaan ############################ -->
+
+
+        <!-- ################################ percobaan modal account base ############### -->
+<div id="accountModal" class="modal">
+    <div class="modal-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 20px;">
+        <span class="close" onclick="closeAccountModal()" style="display: flex; margin-left: 340px;">&times;</span>
+        <div id="modalAccountBase" class="modal-account-base" style="">
+            <div><h2>My Account Information</h2></div>
+            <div><img style="object-fit: cover; border-radius: 20px;" src="./src/image/accountplace.jpg" alt=""></div>
+            <div id="accountfullname" class="account-info"></div>
+            <div id="accountemail" class="account-info"></div>
+            <div id="gender" class="account-info"></div>
+            <div id="address" class="account-info"></div>
+        </div>
+    </div>
+</div>
+        <!-- ################################ percobaan modal account base ############### -->
 
 
     <div class="menu">
@@ -78,6 +113,7 @@
         <button onclick="scrollToSection('news')">News</button>
         <button onclick="scrollToSection('gallery')">Gallery</button>
         <button onclick="scrollToSection('contact')">Contact</button>
+        <button onclick="openAccountModal()" >Account</button>
     </div>
 </div>
 
@@ -96,7 +132,7 @@
         <div class="Informasi" id="informasi">
             <div></div>
             <div style="width: 100%;">
-                <h2 style="margin-left: 1%;">Informasi pelatihan</h2>
+                <h2 style="margin-left: 1%;">Informasi pelatihan mendatang</h2>
                 <table>
                     <thead>
                         <tr>
@@ -166,71 +202,24 @@
                 </h2>
             </div>
             <div class="berita1" style="display: flex; flex-direction: row;">
-                <div class="card2" style="display: flex; flex-direction: column;">
-                    <div class="card2top">
-                        <img src="./src/image/berita 1.jpeg" alt="gambar1">
-                    </div>
-                    <div class="card2mid">
-                        <h3 style="font-size: x-small;">Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan
-                            Kuliahnya</h3>
-                    </div>
-                    <div class="card2bottom" style="font-size: xx-small;">
-                        pernah mendengar profesi teknisi komputer? Apa saja tugas teknisi komputer dan skill apa yang
-                        harus dimiliki?
-                    </div>
-                    <button class="read-button">Read</button>
-                </div>
-                <div class="card2" style="display: flex; flex-direction: column;">
-                    <div class="card2top">
-                        <img src="./src/image/berita 2.jpg" alt="gambar2">
-                    </div>
-                    <div class="card2mid">
-                        <h3 style="font-size: x-small;">Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat
-                            Guru, Yuk Daftar!</h3>
-                    </div>
-                    <div class="card2bottom" style="font-size: xx-small;">
-                        Kemendikbudristek, LPDP, dan Harvard University membuka program pelatihan skill digital untuk
-                        guru. Sertifikat dari Harvard!
-                    </div>
-                    <button class="read-button">Read</button>
-
-                </div>
-                <div class="card2" style="display: flex; flex-direction: column;">
-                    <div class="card2top">
-                        <img src="./src/image/berita 3.jpg" alt="gambar3">
-                    </div>
-                    <div class="card2mid">
-                        <h3 style="font-size: x-small;">
-                            Teknologi Informasi: Pengertian, Fungsi, Contoh, dan Prediksi Masa Depan
-                        </h3>
-                    </div>
-                    <div class="card2bottom" style="font-size: xx-small;">
-
-                        Teknologi informasi atau TI berpengaruh besar pada kehidupan manusia. Ketahui pengertian,
-                        fungsi, contoh penerapan, dan prediksi di masa depan.
-                    </div>
-                    <button class="read-button">Read</button>
-
-                </div>
-                <div class="card2" style="display: flex; flex-direction: column;">
-                    <div class="card2top">
-                        <img src="./src/image/berita 4.jpg" alt="gambar4">
-                    </div>
-                    <div class="card2mid">
-                        <h3 style="font-size: x-small;">
-                            ITS Buka Prodi S1 Rekayasa AI & Perangkat Lunak, Begini Prospeknya
-                        </h3>
-                    </div>
-                    <div class="card2bottom" style="font-size: xx-small;">
-                        ITS membuka prodi S1 Rekayasa Perangkat Lunak (Software Engineering) dan S1 Rekayasa Kecerdasan
-                        Buatan (Artificial Intelligence/AI Engineering), nih!
-                    </div>
-                    <button class="read-button">Read</button>
-
-                </div>
             </div>
-            <div style="text-align: right;">
+            <div style="text-align: right; display: flex; align-items: right; justify-content: right;">
+                <button style="background-color: #1E488F; 
+               background-image: linear-gradient(to bottom, #0a49b5, #15545e); 
+               color: white; /* Warna teks putih */
+               border: none; /* Tidak ada border */
+               border-radius: 10px; /* Corner bulat */
+               padding: 5px 10px; /* Padding */
+               font-size: 13px; /* Ukuran font */
+               cursor: pointer; /* Kursor pointer */
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow */
+               margin: 5px;
+               display: flex;
+               justify-content: right;
+               align-items: right;
+               outline: none; /* Tidak ada outline saat focus */">
                 more>>
+                </button>
             </div>
 
         </div>
@@ -345,6 +334,48 @@
       
 
 <script>
+//############################# percobaan load data news ########################
+fetch('./backend/news.json')
+            .then(response => response.json())
+            .then(data => {
+                const newsContainer = document.getElementById('news');
+                // Lakukan iterasi melalui setiap berita dalam data
+                data.forEach(news => {
+                    const card = document.createElement('div');
+                    card.classList.add('card2');
+
+                    const cardTop = document.createElement('div');
+                    cardTop.classList.add('card2top');
+                    const image = document.createElement('img');
+                    image.src = news.image;
+                    cardTop.appendChild(image);
+
+                    const cardMid = document.createElement('div');
+                    cardMid.classList.add('card2mid');
+                    const title = document.createElement('h3');
+                    title.textContent = news.title;
+                    cardMid.appendChild(title);
+
+                    const cardBottom = document.createElement('div');
+                    cardBottom.classList.add('card2bottom');
+                    cardBottom.textContent = news.description;
+
+                    const readButton = document.createElement('button');
+                    readButton.classList.add('read-button');
+                    readButton.textContent = 'Read';
+
+                    card.appendChild(cardTop);
+                    card.appendChild(cardMid);
+                    card.appendChild(cardBottom);
+                    card.appendChild(readButton);
+
+                    newsContainer.querySelector('.berita1').appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
 
 //############################# percobaan ambil informasi course ##################################
 fetch('./backend/courses.json')
@@ -391,28 +422,6 @@ fetch('./backend/courses.json')
             }
         });
 
-
-//############################# percobaan ambil course lalu tampilkan ke depan ##################
-// fetch('./backend/courses.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         const programsContainer = document.getElementById('programs1');
-
-//         // Loop through each course and create HTML elements to display them
-//         for (let i = 0; i < data.length && i < 6; i++) {
-//             const course = data[i];
-
-//             const courseCard = document.createElement('div');
-//             courseCard.classList.add('card');
-
-//             const courseTitle = document.createElement('h2');
-//             courseTitle.textContent = course.title;
-
-//             courseCard.appendChild(courseTitle);
-//             programsContainer.appendChild(courseCard);
-//         }
-//     })
-//     .catch(error => console.error('Error fetching courses:', error));
 
 
 
@@ -569,7 +578,7 @@ async function displayLogoutButton() {
 
 
 
-//############################################################## slider
+//##################################################### slider galeri ##########################
 let scrollContainer = document.querySelector('.gallery')
         let backBtn = document.getElementById('backBtn')
         let nextBtn = document.getElementById('nextBtn')
@@ -593,8 +602,8 @@ let scrollContainer = document.querySelector('.gallery')
 
 
 
-//######################################### search box ##########################################
 
+//######################################### search box ##########################################
 function openSearchModal() {
         const searchModal = document.getElementById('searchModal');
         const modalContent = document.querySelector('.modal-content-search');
@@ -618,6 +627,8 @@ function openSearchModal() {
     function closeDisplaySearchModal() {
         const searchModal = document.getElementById('searchResultsModal');
         searchModal.style.display = 'none';
+        const modalContent = document.getElementById('searchResultsContent');
+    modalContent.innerHTML ='';
         closeSearchModal()
     }
 
@@ -669,6 +680,88 @@ function openSearchModal() {
         });
 
         // openSearchModal(); // Open modal to display search results
+    }
+
+
+
+//########################################### akun ###################
+// // Fungsi untuk menampilkan modal akun
+// function openAccountModal() {
+//     // Kirim permintaan untuk memeriksa apakah pengguna sudah login
+//     fetch('/users/isLoggedIn')
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('tesdata',data);
+//             if (data.isLoggedIn) {
+//                 // Jika pengguna sudah login, tampilkan modal akun
+//                 fetch('/users/fullname?email=' + data.emailLoggedin) // Ambil informasi pengguna dari backend
+//                     .then(response => response.json())
+//                     .then(userData => {
+//                         // console.log('tesakun',userData); berhasil
+//                         const { fullname, email, gender, address } = userData;
+//                         console.log('tess',fullname, email, gender, address);
+//                         // Mengisi modal dengan informasi pengguna
+//                         document.getElementById('accountfullname').innerHTML = `<p>${fullname}</p>`;
+//                         document.getElementById('accountemail').innerHTML = `<p>${email}</p>`;
+//                         document.getElementById('gender').innerHTML = `<p>${gender}</p>`;
+//                         document.getElementById('address').innerHTML = `<p>${address}</p>`;
+//                         // Menampilkan modal
+//                         document.getElementById('accountModal').style.display = 'block';
+//                     })
+//                     .catch(error => console.error('Error fetching user data:', error));
+//             } else {
+//                 // Jika pengguna belum login, tampilkan pesan atau lakukan tindakan lain
+//                 alert('Anda belum login. Silakan login terlebih dahulu.');
+//             }
+//         })
+//         .catch(error => console.error('Error checking login status:', error));
+// }
+
+// // Fungsi untuk menutup modal akun
+// function closeAccountModal() {
+//     document.getElementById('accountModal').style.display = 'none';
+// }
+
+
+function openModalAccountBase() {
+        // Kirim permintaan untuk memeriksa apakah pengguna sudah login
+        fetch('/users/isLoggedIn')
+            .then(response => response.json())
+            .then(data => {
+                console.log('tesdata', data);
+                if (data.isLoggedIn) {
+                    // Jika pengguna sudah login, tampilkan modal akun
+                    fetch('/users/fullname?email=' + data.emailLoggedin) // Ambil informasi pengguna dari backend
+                        .then(response => response.json())
+                        .then(userData => {
+                            // console.log('tesakun',userData); berhasil
+                            const { fullname, email, gender, address } = userData;
+                            console.log('tess', fullname, email, gender, address);
+                            // Mengisi modal dengan informasi pengguna
+                            document.getElementById('accountfullname').innerHTML = `<p>Nama Lengkap: ${fullname}</p>`;
+                            document.getElementById('accountemail').innerHTML = `<p>Email: ${email}</p>`;
+                            document.getElementById('gender').innerHTML = `<p>Gender: ${gender}</p>`;
+                            document.getElementById('address').innerHTML = `<p>Alamat: ${address}</p>`;
+                            // Menampilkan modal
+                            document.getElementById('accountModal').style.display = 'block';
+                        })
+                        .catch(error => console.error('Error fetching user data:', error));
+                } else {
+                    // Jika pengguna belum login, tampilkan pesan atau lakukan tindakan lain
+                    alert('Anda belum login. Silakan login terlebih dahulu.');
+                }
+            })
+            .catch(error => console.error('Error checking login status:', error));
+    }
+
+    // Fungsi untuk menutup modal akun
+    function closeAccountModal() {
+        document.getElementById('accountModal').style.display = 'none';
+    }
+
+    // Panggil openModalAccountBase saat tombol "Account" diklik
+    function openAccountModal() {
+        openModalAccountBase();
     }
 
 </script>
