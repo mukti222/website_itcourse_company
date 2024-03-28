@@ -1,0 +1,28 @@
+[
+    {
+      "image": "../src/image/berita 1.jpeg",
+      "title": "Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan Kuliahnya",
+      "description": "Pernah mendengar profesi teknisi komputer? Apa saja tugas teknisi komputer dan skill apa yang harus dimiliki?",
+      "categories": "Professional"
+    },
+    {
+      "image": "../src/image/berita 2.jpg",
+      "title": "Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat Guru, Yuk Daftar!",
+      "description": "Kemendikbudristek, LPDP, dan Harvard University membuka program pelatihan skill digital untuk guru. Sertifikat dari Harvard!",
+      "categories": "Education"
+    },
+    {
+      "image": "../src/image/berita 3.jpg",
+      "title": "Teknologi Informasi: Pengertian, Fungsi, Contoh, dan Prediksi Masa Depan",
+      "description": "Teknologi informasi atau TI berpengaruh besar pada kehidupan manusia. Ketahui pengertian, fungsi, contoh penerapan, dan prediksi di masa depan.",
+      "categories": "Technology"
+    },
+    {
+      "image": "../src/image/berita 4.jpg",
+      "title": "ITS Buka Prodi S1 Rekayasa AI & Perangkat Lunak, Begini Prospeknya",
+      "description": "ITS membuka prodi S1 Rekayasa Perangkat Lunak (Software Engineering) dan S1 Rekayasa Kecerdasan Buatan (Artificial Intelligence/AI Engineering), nih!",
+      "categories": "Education"
+    }
+  ]
+  
+  
