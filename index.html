@@ -200,8 +200,80 @@
                 <h2 style="margin-left: 1%;">
                     Berita dan artikel
                 </h2>
+                <div class="kategori-dropdown">
+                    <div class="dropdown-content">
+                        <select id="category-select">
+                            <option value="all">All</option>
+                            <option value="technology">Technology</option>
+                            <option value="education">Education</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="berita1" style="display: flex; flex-direction: row;">
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./src/image/berita 1.jpeg" alt="gambar1">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">Teknisi Komputer: Tugas, Skill yang Harus Dimiliki dan Jurusan
+                            Kuliahnya</h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        pernah mendengar profesi teknisi komputer? Apa saja tugas teknisi komputer dan skill apa yang
+                        harus dimiliki?
+                    </div>
+                    <button class="read-button"> <a href="./news/1.html">Read</a></button>
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./src/image/berita 2.jpg" alt="gambar2">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">Kemdikbud & Harvard University Luncurkan Pelatihan Digital buat
+                            Guru, Yuk Daftar!</h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        Kemendikbudristek, LPDP, dan Harvard University membuka program pelatihan skill digital untuk
+                        guru. Sertifikat dari Harvard!
+                    </div>
+                    <button class="read-button"> <a href="./news/2.html">Read</a></button>
+
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./src/image/berita 3.jpg" alt="gambar3">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">
+                            Teknologi Informasi: Pengertian, Fungsi, Contoh, dan Prediksi Masa Depan
+                        </h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+
+                        Teknologi informasi atau TI berpengaruh besar pada kehidupan manusia. Ketahui pengertian,
+                        fungsi, contoh penerapan, dan prediksi di masa depan.
+                    </div>
+                    <button class="read-button"> <a href="./news/3.html">Read</a></button>
+
+                </div>
+                <div class="card2" style="display: flex; flex-direction: column;">
+                    <div class="card2top">
+                        <img src="./src/image/berita 4.jpg" alt="gambar4">
+                    </div>
+                    <div class="card2mid">
+                        <h3 style="font-size: x-small;">
+                            ITS Buka Prodi S1 Rekayasa AI & Perangkat Lunak, Begini Prospeknya
+                        </h3>
+                    </div>
+                    <div class="card2bottom" style="font-size: xx-small;">
+                        ITS membuka prodi S1 Rekayasa Perangkat Lunak (Software Engineering) dan S1 Rekayasa Kecerdasan
+                        Buatan (Artificial Intelligence/AI Engineering), nih!
+                    </div>
+                    <button class="read-button"> <a href="./news/4.html">Read</a></button>
+
+                </div>
             </div>
             <div style="text-align: right; display: flex; align-items: right; justify-content: right;">
                 <button style="background-color: #1E488F; 
@@ -256,7 +328,7 @@
 
     <div class="footer" id="contact" style="display: flex; flex-direction: column;">
         <div class="contact">
-            <h2 style="margin-left: 1%;">
+            <h2 style="margin: 0%; margin-left: 20px; margin-top: 20px;">
                 Contact
             </h2>
         </div>
@@ -266,7 +338,7 @@
                 Tertarik untuk mengetahui lebih lanjut mengenai KURSUSIT.ID training ataupun sertifikasi? atau pertanyaan
                 lainnya? anda dapat bertanya secara langsung melalui chat whatsapp kami.
             </div>
-            <div style="width: 25%; text-align: justify;">
+            <div style="width: 20%; text-align: justify;">
                 <ul>
                     <p>Contacts</p>
                     <li>Jl Permata senaya no 18</li>
@@ -275,7 +347,7 @@
                     <li>Senin - Jumat 09.00 - 21.00</li>
                 </ul>
             </div>
-            <div style="width: 25%; text-align: justify;">
+            <div style="width: 20%; text-align: justify; margin-left: 50px;">
                 <p>Services</p>
                 <ul>
                     <li>Training</li>
@@ -283,6 +355,21 @@
                     <li>Event</li>
                 </ul>
             </div>
+            <div class="socmed-logo" style="width: 10%; display: flex; flex-direction: column;">
+                <div class="instagram" style="height: 40%;">
+                    <a href="https://www.instagram.com/">
+                        <img style="width: 40px;" src="./src/image/instapng.png" alt="Instagram">
+                    </a>
+                </div>
+                <div style="padding: 10px;"></div>
+                <div class="facebook" style="height: 40%;">
+                    <a href="https://www.facebook.com/">
+                        <img style="width: 40px;" src="./src/image/fblogo.png" alt="Facebook">
+                    </a>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
 
@@ -334,47 +421,50 @@
       
 
 <script>
+//############################# news kategori #####################################
+
+
 //############################# percobaan load data news ########################
-fetch('./backend/news.json')
-            .then(response => response.json())
-            .then(data => {
-                const newsContainer = document.getElementById('news');
-                // Lakukan iterasi melalui setiap berita dalam data
-                data.forEach(news => {
-                    const card = document.createElement('div');
-                    card.classList.add('card2');
+// fetch('./backend/news.json')
+//             .then(response => response.json())
+//             .then(data => {
+//                 const newsContainer = document.getElementById('news');
+//                 // Lakukan iterasi melalui setiap berita dalam data
+//                 data.forEach(news => {
+//                     const card = document.createElement('div');
+//                     card.classList.add('card2');
 
-                    const cardTop = document.createElement('div');
-                    cardTop.classList.add('card2top');
-                    const image = document.createElement('img');
-                    image.src = news.image;
-                    cardTop.appendChild(image);
+//                     const cardTop = document.createElement('div');
+//                     cardTop.classList.add('card2top');
+//                     const image = document.createElement('img');
+//                     image.src = news.image;
+//                     cardTop.appendChild(image);
 
-                    const cardMid = document.createElement('div');
-                    cardMid.classList.add('card2mid');
-                    const title = document.createElement('h3');
-                    title.textContent = news.title;
-                    cardMid.appendChild(title);
+//                     const cardMid = document.createElement('div');
+//                     cardMid.classList.add('card2mid');
+//                     const title = document.createElement('h3');
+//                     title.textContent = news.title;
+//                     cardMid.appendChild(title);
 
-                    const cardBottom = document.createElement('div');
-                    cardBottom.classList.add('card2bottom');
-                    cardBottom.textContent = news.description;
+//                     const cardBottom = document.createElement('div');
+//                     cardBottom.classList.add('card2bottom');
+//                     cardBottom.textContent = news.description;
 
-                    const readButton = document.createElement('button');
-                    readButton.classList.add('read-button');
-                    readButton.textContent = 'Read';
+//                     const readButton = document.createElement('button');
+//                     readButton.classList.add('read-button');
+//                     readButton.textContent = 'Read';
 
-                    card.appendChild(cardTop);
-                    card.appendChild(cardMid);
-                    card.appendChild(cardBottom);
-                    card.appendChild(readButton);
+//                     card.appendChild(cardTop);
+//                     card.appendChild(cardMid);
+//                     card.appendChild(cardBottom);
+//                     card.appendChild(readButton);
 
-                    newsContainer.querySelector('.berita1').appendChild(card);
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+//                     newsContainer.querySelector('.berita1').appendChild(card);
+//                 });
+//             })
+//             .catch(error => {
+//                 console.error('Error:', error);
+//             });
 
 
 //############################# percobaan ambil informasi course ##################################
