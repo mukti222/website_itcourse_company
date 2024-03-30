@@ -258,7 +258,8 @@ height: 35%;
 border-radius: 10px; /* Membuat sudut tombol menjadi bulat */
 padding: 5px 7px; /* Memberikan ruang di dalam tombol */
 background-color: rgb(41, 53, 84); /* Warna latar belakang */
-color: white; /* Warna teks */
+color: white !important; /* Warna teks */
+text-decoration: none !important;
 border: none; /* Menghapus border */
 cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
 margin-left: 110px;
@@ -267,6 +268,10 @@ transition: background-color 0.3s ease; /* Transisi warna latar belakang saat ho
 /* justify-content: center; */
 }
 
+.read-button a{
+    color: white !important; /* Warna teks */
+text-decoration: none !important;
+}
 .read-button:hover {
 background-color: darkblue; /* Warna latar belakang saat tombol dihover */
 }
@@ -794,4 +799,14 @@ cursor: pointer;
 /* Style for bottom section of the card */
 .card2bottom {
     font-size: xx-small;
+}
+
+
+
+
+/* ##############################################news category ####################### */
+.dropdown-content select {
+    display: block;
+    margin-left: 10px;
+    width: 100px;
 }
